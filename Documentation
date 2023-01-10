@@ -1,0 +1,17 @@
+The code above imports the pandas and matplotlib libraries and reads in a CSV file named "datasets/coinmarketcap_06122017.csv" into a pandas dataframe called dec6.
+It then selects the 'id' and 'market_cap_usd' columns from the dataframe, filters out rows that do not have a market capitalization value, and counts the number of remaining values.
+
+Next, it selects the top 10 rows of the filtered dataframe, sets the index to 'id', and calculates the percentage of the total market capitalization represented by each of the top 10 coins. 
+It then plots this data using a bar plot and adds labels and a title to the plot.
+
+The code then defines a function called top10_subplot which takes two parameters: a series of data and a title. 
+The function creates a subplot with two bar plots, one for the top 10 losers and one for the top 10 winners, and sets the main title and y-axis label.
+It returns the figure and axis objects for the subplot.
+
+The code then selects the 'id', 'percent_change_24h', and 'percent_change_7d' columns from dec6, sets the index to 'id' and drops all rows with null values, 
+and sorts the resulting dataframe by 'percent_change_24h'.
+It then calls the top10_subplot function with the 'percent_change_24h' column and a title as arguments and plots the resulting subplot.
+Finally, it repeats this process with the 'percent_change_7d' column and a different title.
+
+Overall, this code is intended to explore and visualize the market capitalization and volatility of various cryptocurrencies as represented in the
+"datasets/coinmarketcap_06122017.csv" file. It could potentially be used to identify trends or patterns in the data and make informed decisions about cryptocurrency investments.
